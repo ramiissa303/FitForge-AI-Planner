@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitForge AI Planner | Your Personal Fitness Journey</title>
+  <meta name="description" content="AI-powered personalized workout and nutrition plans. Transform your body with FitForge." />
+  <meta name="theme-color" content="#10B981" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FitForge AI Planner" />
+  <meta property="og:description" content="Answer 12 targeted questions and receive a fully personalised workout & nutrition plan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fitforge-planner.netlify.app/" />
+
+  <!-- Favicon (inline SVG dumbbell) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='13' width='5' height='6' rx='1.5' fill='%2310B981'/%3E%3Crect x='25' y='13' width='5' height='6' rx='1.5' fill='%2310B981'/%3E%3Crect x='7' y='9' width='4' height='14' rx='1.5' fill='%2310B981'/%3E%3Crect x='21' y='9' width='4' height='14' rx='1.5' fill='%2310B981'/%3E%3Crect x='11' y='14' width='10' height='4' rx='1.5' fill='%2310B981'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="FitForge home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="13" width="5" height="6" rx="1.5" fill="currentColor"/><rect x="25" y="13" width="5" height="6" rx="1.5" fill="currentColor"/><rect x="7" y="9" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="21" y="9" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="11" y="14" width="10" height="4" rx="1.5" fill="currentColor"/></svg>
+        </div>
+        <span>FitForge</span>
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#planner" class="nav-link">Planner</a></li>
+        <li><a href="#exercises" class="nav-link">Exercises</a></li>
+        <li><a href="#nutrition" class="nav-link">Nutrition</a></li>
+        <li><a href="#bmi" class="nav-link">BMI</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+      <a href="#planner" class="btn-nav-cta">Start Free</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#features" class="mobile-link">Features</a></li>
+      <li><a href="#planner" class="mobile-link">Planner</a></li>
+      <li><a href="#exercises" class="mobile-link">Exercises</a></li>
+      <li><a href="#nutrition" class="mobile-link">Nutrition</a></li>
+      <li><a href="#bmi" class="mobile-link">BMI Calculator</a></li>
+      <li><a href="#faq" class="mobile-link">FAQ</a></li>
+    </ul>
+    <a href="#planner" class="btn-primary mobile-cta">Start Your Journey</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true"><div class="hero-overlay"></div></div>
+    <div class="hero-content container">
+      <div class="hero-badge animate-fade-up" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.85 8.3L22 9.3L17 14.1L18.18 21.3L12 18L5.82 21.3L7 14.1L2 9.3L9.15 8.3L12 2Z"/></svg>
+        AI-Powered Planning
+      </div>
+      <h1 class="hero-headline animate-fade-up delay-1">
+        Transform Your Body.<br /><span class="gradient-text">Forge Your Future.</span>
+      </h1>
+      <p class="hero-sub animate-fade-up delay-2">
+        Answer 12 targeted questions and receive a fully personalized<br class="hide-mobile" />
+        workout &amp; nutrition plan — built around your unique goals, lifestyle, and limits.
+      </p>
+      <div class="hero-actions animate-fade-up delay-3">
+        <a href="#planner" class="btn-primary hero-cta">
+          Start Your Journey
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#features" class="btn-ghost">Explore Features</a>
+      </div>
+      <div class="hero-stats animate-fade-up delay-4" aria-label="Platform statistics">
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="50000">0</div>
+          <div class="hero-stat-label">Active Users</div>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="120">0</div>
+          <div class="hero-stat-label">Exercises</div>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="98">0</div>
+          <div class="hero-stat-label">% Satisfaction</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features section" aria-label="Features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Why FitForge</span>
+        <h2 class="section-title">Everything You Need to<br /><span class="gradient-text">Reach Your Peak</span></h2>
+        <p class="section-sub">From deep personalization to an extensive exercise library — FitForge has every tool to transform your fitness journey.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon-wrap" style="--icon-color: #10B981;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Deep Personalisation</h3>
+          <p>12-question assessment covers your goals, injuries, equipment, diet, lifestyle, and more — creating a plan that's genuinely unique to you.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-1">
+          <div class="feature-icon-wrap" style="--icon-color: #6366F1;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+          <h3>Science-Based Nutrition</h3>
+          <p>Precise calorie and macro targets using Mifflin-St Jeor with protein-anchored macro allocation — adapted for your goal and diet type.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-2">
+          <div class="feature-icon-wrap" style="--icon-color: #F97316;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Injury-Aware Planning</h3>
+          <p>Declare your injuries and get safe exercise alternatives automatically. Your plan works around your body, not against it.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-3">
+          <div class="feature-icon-wrap" style="--icon-color: #EC4899;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h3>Progress Roadmap</h3>
+          <p>Get a goal timeline with week-by-week milestones, achievement badges, and realistic progress expectations based on your data.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon-wrap" style="--icon-color: #06B6D4;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Exercise Library</h3>
+          <p>Browse 120+ exercises with HD video demonstrations, form breakdowns, and expert tips — filterable by muscle group.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-1">
+          <div class="feature-icon-wrap" style="--icon-color: #8B5CF6;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <h3>Diet-Adapted Meals</h3>
+          <p>Meal suggestions that respect your diet type — standard, vegetarian, or vegan — with protein preferences and meal frequency built in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANNER -->
+  <section id="planner" class="planner-section section" aria-label="Personal Plan Generator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Your Plan Awaits</span>
+        <h2 class="section-title">Build Your <span class="gradient-text">Custom Plan</span></h2>
+        <p class="section-sub">A 12-step assessment that goes deeper than any app — generating a genuinely personalised fitness blueprint.</p>
+      </div>
+
+      <div class="planner-wrapper">
+        <div class="planner-progress">
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8" aria-label="Questionnaire progress">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="step-counter" id="stepCounter" aria-live="polite">Step 1 of 12</div>
+        </div>
+
+        <div class="step-dots" aria-hidden="true">
+          <div class="step-dot active" data-step="1"></div>
+          <div class="step-dot" data-step="2"></div>
+          <div class="step-dot" data-step="3"></div>
+          <div class="step-dot" data-step="4"></div>
+          <div class="step-dot" data-step="5"></div>
+          <div class="step-dot" data-step="6"></div>
+          <div class="step-dot" data-step="7"></div>
+          <div class="step-dot" data-step="8"></div>
+          <div class="step-dot" data-step="9"></div>
+          <div class="step-dot" data-step="10"></div>
+          <div class="step-dot" data-step="11"></div>
+          <div class="step-dot" data-step="12"></div>
+        </div>
+
+        <div class="steps-container" id="stepsContainer" aria-live="polite">
+
+          <!-- STEP 1: Name + Gender -->
+          <div class="planner-step active" id="step-1" role="group" aria-labelledby="step1-title">
+            <div class="step-welcome-banner">
+              <span>👋</span> Welcome to FitForge
+            </div>
+            <h3 class="step-title" id="step1-title">Let's start your<br /><span class="gradient-text">fitness journey</span></h3>
+            <p class="step-sub">Tell us about yourself so we can build a plan that truly fits you.</p>
+
+            <div class="input-field-wrap">
+              <label class="input-label" for="nameInput">Your First Name</label>
+              <input type="text" id="nameInput" class="text-input" placeholder="e.g. Alex" autocomplete="given-name" maxlength="30" aria-required="true" />
+            </div>
+
+            <div style="margin-top:24px;">
+              <label class="input-label" id="genderLabel">Gender</label>
+              <div class="option-grid option-grid-2" role="radiogroup" aria-labelledby="genderLabel">
+                <button class="option-card" data-field="gender" data-value="male" role="radio" aria-checked="false">
+                  <div class="option-icon" aria-hidden="true">♂</div>
+                  <div class="option-label">Male</div>
+                </button>
+                <button class="option-card" data-field="gender" data-value="female" role="radio" aria-checked="false">
+                  <div class="option-icon" aria-hidden="true">♀</div>
+                  <div class="option-label">Female</div>
+                </button>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <div></div>
+              <button class="btn-next" id="step1Next">Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Age -->
+          <div class="planner-step" id="step-2" role="group" aria-labelledby="step2-title">
+            <h3 class="step-title" id="step2-title">How old are you?</h3>
+            <p class="step-sub">Age affects your BMR, recovery capacity, and hormone levels.</p>
+            <div class="input-group-single">
+              <div class="number-input-wrap" role="group" aria-label="Age input">
+                <button class="num-btn" id="ageDown" aria-label="Decrease age">−</button>
+                <input type="number" id="ageInput" class="number-input" min="13" max="80" value="25" aria-label="Age in years" />
+                <button class="num-btn" id="ageUp" aria-label="Increase age">+</button>
+              </div>
+              <span class="input-unit">years old</span>
+              <input type="range" id="ageSlider" class="range-slider" min="13" max="80" value="25" aria-label="Age slider" />
+            </div>
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Height + Weight (combined) -->
+          <div class="planner-step" id="step-3" role="group" aria-labelledby="step3-title">
+            <h3 class="step-title" id="step3-title">Your body measurements</h3>
+            <p class="step-sub">Height and weight are used to calculate your BMR, BMI, and macro targets.</p>
+            <div class="split-inputs">
+              <div class="split-input-group">
+                <div class="split-header">
+                  <label class="input-label" for="heightInput">Height</label>
+                  <div class="unit-toggle small">
+                    <button class="unit-btn active" id="heightCm" data-unit="cm">cm</button>
+                    <button class="unit-btn" id="heightFt" data-unit="ft">ft</button>
+                  </div>
+                </div>
+                <div class="number-input-wrap" role="group" aria-label="Height input">
+                  <button class="num-btn" id="heightDown" aria-label="Decrease height">−</button>
+                  <input type="number" id="heightInput" class="number-input" min="100" max="250" value="175" aria-label="Height" />
+                  <button class="num-btn" id="heightUp" aria-label="Increase height">+</button>
+                </div>
+                <input type="range" id="heightSlider" class="range-slider" min="100" max="220" value="175" aria-label="Height slider" />
+                <span class="input-unit" id="heightUnitLabel">cm</span>
+              </div>
+
+              <div class="split-input-group">
+                <div class="split-header">
+                  <label class="input-label" for="weightInput">Weight</label>
+                  <div class="unit-toggle small">
+                    <button class="unit-btn active" id="weightKg" data-unit="kg">kg</button>
+                    <button class="unit-btn" id="weightLbs" data-unit="lbs">lbs</button>
+                  </div>
+                </div>
+                <div class="number-input-wrap" role="group" aria-label="Weight input">
+                  <button class="num-btn" id="weightDown" aria-label="Decrease weight">−</button>
+                  <input type="number" id="weightInput" class="number-input" min="30" max="300" value="75" aria-label="Weight" />
+                  <button class="num-btn" id="weightUp" aria-label="Increase weight">+</button>
+                </div>
+                <input type="range" id="weightSlider" class="range-slider" min="30" max="200" value="75" aria-label="Weight slider" />
+                <span class="input-unit" id="weightUnitLabel">kg</span>
+              </div>
+            </div>
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Primary Goal -->
+          <div class="planner-step" id="step-4" role="group" aria-labelledby="step4-title">
+            <h3 class="step-title" id="step4-title">What is your primary goal?</h3>
+            <p class="step-sub">This shapes your calorie target, macro split, and entire training approach.</p>
+            <div class="option-grid option-grid-3 option-grid-goals" role="radiogroup" aria-labelledby="step4-title">
+              <button class="option-card" data-field="goal" data-value="fat-loss" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🔥</div>
+                <div class="option-label">Fat Loss</div>
+                <div class="option-desc">Calorie deficit + cardio</div>
+              </button>
+              <button class="option-card" data-field="goal" data-value="muscle-gain" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">💪</div>
+                <div class="option-label">Muscle Gain</div>
+                <div class="option-desc">Lean bulk + overload</div>
+              </button>
+              <button class="option-card" data-field="goal" data-value="recomposition" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">⚡</div>
+                <div class="option-label">Recomposition</div>
+                <div class="option-desc">Lose fat &amp; build muscle</div>
+              </button>
+              <button class="option-card" data-field="goal" data-value="strength" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🏋️</div>
+                <div class="option-label">Strength</div>
+                <div class="option-desc">Max strength + power</div>
+              </button>
+              <button class="option-card" data-field="goal" data-value="endurance" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🎯</div>
+                <div class="option-label">Endurance</div>
+                <div class="option-desc">Cardiovascular fitness</div>
+              </button>
+              <button class="option-card" data-field="goal" data-value="general" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">⭐</div>
+                <div class="option-label">General Fitness</div>
+                <div class="option-desc">Health &amp; wellbeing</div>
+              </button>
+            </div>
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Target Weight + Timeline -->
+          <div class="planner-step" id="step-5" role="group" aria-labelledby="step5-title">
+            <h3 class="step-title" id="step5-title">Set your target</h3>
+            <p class="step-sub" id="step5-sub">What weight would you like to reach, and by when?</p>
+
+            <div class="target-weight-section">
+              <label class="input-label" for="targetWeightInput">Target Weight <span class="optional-tag">(Optional)</span></label>
+              <div class="target-weight-row">
+                <div class="number-input-wrap flex-grow" role="group" aria-label="Target weight input">
+                  <button class="num-btn" id="targetWeightDown" aria-label="Decrease target weight">−</button>
+                  <input type="number" id="targetWeightInput" class="number-input" min="30" max="300" value="" placeholder="–" aria-label="Target weight" />
+                  <button class="num-btn" id="targetWeightUp" aria-label="Increase target weight">+</button>
+                </div>
+                <span class="input-unit" id="targetWeightUnit">kg</span>
+              </div>
+              <button class="skip-link" id="skipTarget">I'd rather not set a target weight</button>
+            </div>
+
+            <div style="margin-top:28px;">
+              <label class="input-label" id="timelineLabel">Goal Timeline</label>
+              <div class="timeline-grid" role="radiogroup" aria-labelledby="timelineLabel">
+                <button class="timeline-pill" data-field="timeline" data-value="1month" role="radio" aria-checked="false">1 Month</button>
+                <button class="timeline-pill" data-field="timeline" data-value="3months" role="radio" aria-checked="false">3 Months</button>
+                <button class="timeline-pill selected" data-field="timeline" data-value="6months" role="radio" aria-checked="true">6 Months</button>
+                <button class="timeline-pill" data-field="timeline" data-value="12months" role="radio" aria-checked="false">12 Months</button>
+                <button class="timeline-pill" data-field="timeline" data-value="no-rush" role="radio" aria-checked="false">No Rush</button>
+              </div>
+            </div>
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 6: Experience Level -->
+          <div class="planner-step" id="step-6" role="group" aria-labelledby="step6-title">
+            <h3 class="step-title" id="step6-title">Training experience</h3>
+            <p class="step-sub">How long have you been training consistently?</p>
+            <div class="option-grid option-grid-2" role="radiogroup" aria-labelledby="step6-title">
+              <button class="option-card" data-field="experience" data-value="complete-beginner" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🌱</div>
+                <div class="option-label">Complete Beginner</div>
+                <div class="option-desc">Never trained or &lt;3 months</div>
+              </button>
+              <button class="option-card" data-field="experience" data-value="beginner" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🔰</div>
+                <div class="option-label">Beginner</div>
+                <div class="option-desc">3 months – 1 year</div>
+              </button>
+              <button class="option-card" data-field="experience" data-value="intermediate" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">⚡</div>
+                <div class="option-label">Intermediate</div>
+                <div class="option-desc">1–3 years consistent</div>
+              </button>
+              <button class="option-card" data-field="experience" data-value="advanced" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🏆</div>
+                <div class="option-label">Advanced</div>
+                <div class="option-desc">3+ years consistent</div>
+              </button>
+            </div>
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 7: Activity Level -->
+          <div class="planner-step" id="step-7" role="group" aria-labelledby="step7-title">
+            <h3 class="step-title" id="step7-title">Current activity level</h3>
+            <p class="step-sub">How active are you on a typical day — <em>outside</em> of gym sessions?</p>
+            <div class="option-grid option-grid-activity" role="radiogroup" aria-labelledby="step7-title">
+              <button class="option-card activity-card" data-field="activityLevel" data-value="sedentary" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🪑</div>
+                <div class="option-label">Sedentary</div>
+                <div class="option-desc">Desk job, minimal movement</div>
+                <div class="activity-multiplier">× 1.2</div>
+              </button>
+              <button class="option-card activity-card" data-field="activityLevel" data-value="lightly-active" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🚶</div>
+                <div class="option-label">Lightly Active</div>
+                <div class="option-desc">Light walking or standing job</div>
+                <div class="activity-multiplier">× 1.375</div>
+              </button>
+              <button class="option-card activity-card" data-field="activityLevel" data-value="moderately-active" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🚴</div>
+                <div class="option-label">Moderately Active</div>
+                <div class="option-desc">Active job or regular sports</div>
+                <div class="activity-multiplier">× 1.55</div>
+              </button>
+              <button class="option-card activity-card" data-field="activityLevel" data-value="very-active" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🏃</div>
+                <div class="option-label">Very Active</div>
+                <div class="option-desc">Hard physical job + training</div>
+                <div class="activity-multiplier">× 1.725</div>
+              </button>
+              <button class="option-card activity-card" data-field="activityLevel" data-value="athlete" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🏅</div>
+                <div class="option-label">Athlete</div>
+                <div class="option-desc">Twice-daily training or pro sport</div>
+                <div class="activity-multiplier">× 1.9</div>
+              </button>
+            </div>
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 8: Training Environment + Equipment -->
+          <div class="planner-step" id="step-8" role="group" aria-labelledby="step8-title">
+            <h3 class="step-title" id="step8-title">Training environment</h3>
+            <p class="step-sub">Where you train determines which exercises and equipment we include.</p>
+
+            <label class="input-label" id="locationLabel">Primary Location</label>
+            <div class="option-grid option-grid-2" role="radiogroup" aria-labelledby="locationLabel">
+              <button class="option-card" data-field="location" data-value="gym" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🏋️</div>
+                <div class="option-label">Gym</div>
+                <div class="option-desc">Commercial or private facility</div>
+              </button>
+              <button class="option-card" data-field="location" data-value="home" role="radio" aria-checked="false">
+                <div class="option-icon" aria-hidden="true">🏠</div>
+                <div class="option-label">Home</div>
+                <div class="option-desc">Train at home or outdoors</div>
+              </button>
+            </div>
+
+            <!-- Gym sub-options (shown when gym selected) -->
+            <div class="equipment-subsection hidden" id="gymTypeSection">
+              <label class="input-label" id="gymTypeLabel">Type of gym</label>
+              <div class="option-grid option-grid-2" role="radiogroup" aria-labelledby="gymTypeLabel">
+                <button class="option-card small-card" data-field="gymType" data-value="commercial" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🏢</div>
+                  <div class="option-label">Commercial Gym</div>
+                  <div class="option-desc">Full machines, cables, barbells</div>
+                </button>
+                <button class="option-card small-card" data-field="gymType" data-value="basic" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🔧</div>
+                  <div class="option-label">Basic Gym</div>
+                  <div class="option-desc">Dumbbells &amp; barbells only</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Home sub-options (shown when home selected) -->
+            <div class="equipment-subsection hidden" id="homeEquipmentSection">
+              <label class="input-label" id="equipLabel">Available equipment <span style="font-weight:400;color:var(--text-muted)">(select all that apply)</span></label>
+              <div class="check-group" role="group" aria-labelledby="equipLabel">
+                <label class="check-item">
+                  <input type="checkbox" value="bodyweight" class="equip-check" checked aria-label="Bodyweight only" />
+                  <span class="check-icon" aria-hidden="true">🤸</span>
+                  <span class="check-label">Bodyweight Only</span>
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" value="bands" class="equip-check" aria-label="Resistance bands" />
+                  <span class="check-icon" aria-hidden="true">🪢</span>
+                  <span class="check-label">Resistance Bands</span>
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" value="dumbbells" class="equip-check" aria-label="Dumbbells" />
+                  <span class="check-icon" aria-hidden="true">🏋️</span>
+                  <span class="check-label">Dumbbells</span>
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" value="full-home" class="equip-check" aria-label="Full home gym" />
+                  <span class="check-icon" aria-hidden="true">🏗️</span>
+                  <span class="check-label">Full Home Gym</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" id="step8Next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 9: Training Schedule -->
+          <div class="planner-step" id="step-9" role="group" aria-labelledby="step9-title">
+            <h3 class="step-title" id="step9-title">Your training schedule</h3>
+            <p class="step-sub">This determines your workout split and total weekly training volume.</p>
+
+            <div class="schedule-section">
+              <label class="input-label" id="daysLabel">Days per week</label>
+              <div class="days-display" aria-live="polite">
+                <span class="days-count" id="daysCount">4</span>
+                <span class="days-label">days / week</span>
+              </div>
+              <div class="days-buttons" role="radiogroup" aria-labelledby="daysLabel">
+                <button class="day-pill" data-days="1" role="radio" aria-checked="false">1</button>
+                <button class="day-pill" data-days="2" role="radio" aria-checked="false">2</button>
+                <button class="day-pill" data-days="3" role="radio" aria-checked="false">3</button>
+                <button class="day-pill active" data-days="4" role="radio" aria-checked="true">4</button>
+                <button class="day-pill" data-days="5" role="radio" aria-checked="false">5</button>
+                <button class="day-pill" data-days="6" role="radio" aria-checked="false">6</button>
+                <button class="day-pill" data-days="7" role="radio" aria-checked="false">7</button>
+              </div>
+              <div class="days-hint" id="daysHint">Upper / Lower Split</div>
+            </div>
+
+            <div class="schedule-section" style="margin-top:24px;">
+              <label class="input-label" id="durationLabel">Session duration</label>
+              <div class="duration-grid" role="radiogroup" aria-labelledby="durationLabel">
+                <button class="duration-card" data-field="sessionDuration" data-value="30min" role="radio" aria-checked="false">
+                  <div class="duration-time">30</div><div class="duration-unit">min</div>
+                  <div class="duration-desc">Quick &amp; focused</div>
+                </button>
+                <button class="duration-card" data-field="sessionDuration" data-value="45min" role="radio" aria-checked="false">
+                  <div class="duration-time">45</div><div class="duration-unit">min</div>
+                  <div class="duration-desc">Efficient training</div>
+                </button>
+                <button class="duration-card selected" data-field="sessionDuration" data-value="60min" role="radio" aria-checked="true">
+                  <div class="duration-time">60</div><div class="duration-unit">min</div>
+                  <div class="duration-desc">Standard session</div>
+                </button>
+                <button class="duration-card" data-field="sessionDuration" data-value="90min" role="radio" aria-checked="false">
+                  <div class="duration-time">90</div><div class="duration-unit">min</div>
+                  <div class="duration-desc">High volume</div>
+                </button>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 10: Training Style + Injuries -->
+          <div class="planner-step" id="step-10" role="group" aria-labelledby="step10-title">
+            <h3 class="step-title" id="step10-title">Training preferences &amp; injuries</h3>
+            <p class="step-sub">Help us tailor your program and keep you safe.</p>
+
+            <div class="section-block">
+              <label class="input-label" id="styleLabel">Preferred training style</label>
+              <div class="option-grid option-grid-3" role="radiogroup" aria-labelledby="styleLabel">
+                <button class="option-card small-card" data-field="trainingStyle" data-value="strength" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🏋️</div>
+                  <div class="option-label">Strength</div>
+                  <div class="option-desc">Low reps, heavy load</div>
+                </button>
+                <button class="option-card small-card" data-field="trainingStyle" data-value="hypertrophy" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">💪</div>
+                  <div class="option-label">Hypertrophy</div>
+                  <div class="option-desc">Volume for size</div>
+                </button>
+                <button class="option-card small-card" data-field="trainingStyle" data-value="functional" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🤸</div>
+                  <div class="option-label">Functional</div>
+                  <div class="option-desc">Movement quality</div>
+                </button>
+                <button class="option-card small-card" data-field="trainingStyle" data-value="cardio" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🏃</div>
+                  <div class="option-label">Cardio</div>
+                  <div class="option-desc">Conditioning focus</div>
+                </button>
+                <button class="option-card small-card" data-field="trainingStyle" data-value="mixed" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">⚡</div>
+                  <div class="option-label">Mixed</div>
+                  <div class="option-desc">Balanced approach</div>
+                </button>
+              </div>
+            </div>
+
+            <div class="section-block" style="margin-top:24px;">
+              <label class="input-label" id="injuryLabel">
+                Injuries or limitations <span style="font-weight:400;color:var(--text-muted)">(select all that apply)</span>
+              </label>
+              <div class="check-group" role="group" aria-labelledby="injuryLabel">
+                <label class="check-item">
+                  <input type="checkbox" value="none" class="injury-check" checked aria-label="No injuries" />
+                  <span class="check-icon" aria-hidden="true">✅</span>
+                  <span class="check-label">No Injuries</span>
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" value="knee" class="injury-check" aria-label="Knee issues" />
+                  <span class="check-icon" aria-hidden="true">🦵</span>
+                  <span class="check-label">Knee Issues</span>
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" value="back" class="injury-check" aria-label="Back issues" />
+                  <span class="check-icon" aria-hidden="true">🔙</span>
+                  <span class="check-label">Back Issues</span>
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" value="shoulder" class="injury-check" aria-label="Shoulder issues" />
+                  <span class="check-icon" aria-hidden="true">💪</span>
+                  <span class="check-label">Shoulder Issues</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 11: Diet + Protein + Meals -->
+          <div class="planner-step" id="step-11" role="group" aria-labelledby="step11-title">
+            <h3 class="step-title" id="step11-title">Nutrition preferences</h3>
+            <p class="step-sub">Your diet type and preferences shape your entire meal plan.</p>
+
+            <div class="section-block">
+              <label class="input-label" id="dietLabel">Diet type</label>
+              <div class="option-grid option-grid-3" role="radiogroup" aria-labelledby="dietLabel">
+                <button class="option-card small-card" data-field="dietType" data-value="standard" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🍗</div>
+                  <div class="option-label">Standard</div>
+                  <div class="option-desc">All food groups</div>
+                </button>
+                <button class="option-card small-card" data-field="dietType" data-value="vegetarian" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🥦</div>
+                  <div class="option-label">Vegetarian</div>
+                  <div class="option-desc">No meat, eggs ok</div>
+                </button>
+                <button class="option-card small-card" data-field="dietType" data-value="vegan" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🌱</div>
+                  <div class="option-label">Vegan</div>
+                  <div class="option-desc">No animal products</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Shown only for standard diet -->
+            <div class="section-block hidden" id="proteinPrefSection" style="margin-top:20px;">
+              <label class="input-label" id="proteinLabel">Protein preference</label>
+              <div class="option-grid option-grid-3" role="radiogroup" aria-labelledby="proteinLabel">
+                <button class="option-card small-card" data-field="proteinPref" data-value="chicken" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🍗</div>
+                  <div class="option-label">Chicken</div>
+                </button>
+                <button class="option-card small-card" data-field="proteinPref" data-value="fish" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🐟</div>
+                  <div class="option-label">Fish</div>
+                </button>
+                <button class="option-card small-card" data-field="proteinPref" data-value="beef" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🥩</div>
+                  <div class="option-label">Beef</div>
+                </button>
+                <button class="option-card small-card" data-field="proteinPref" data-value="mixed" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🍽️</div>
+                  <div class="option-label">Mixed</div>
+                </button>
+                <button class="option-card small-card" data-field="proteinPref" data-value="eggs" role="radio" aria-checked="false">
+                  <div class="option-icon sm" aria-hidden="true">🥚</div>
+                  <div class="option-label">Eggs</div>
+                </button>
+              </div>
+            </div>
+
+            <div class="section-block" style="margin-top:20px;">
+              <label class="input-label" id="mealsLabel">Meals per day</label>
+              <div class="meals-pills" role="radiogroup" aria-labelledby="mealsLabel">
+                <button class="meal-pill" data-meals="2" role="radio" aria-checked="false">2</button>
+                <button class="meal-pill active" data-meals="3" role="radio" aria-checked="true">3</button>
+                <button class="meal-pill" data-meals="4" role="radio" aria-checked="false">4</button>
+                <button class="meal-pill" data-meals="5" role="radio" aria-checked="false">5</button>
+                <button class="meal-pill" data-meals="6" role="radio" aria-checked="false">6</button>
+              </div>
+              <p class="pill-hint">More meals = better protein distribution throughout the day</p>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-next" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 12: Lifestyle -->
+          <div class="planner-step" id="step-12" role="group" aria-labelledby="step12-title">
+            <h3 class="step-title" id="step12-title">Lifestyle assessment</h3>
+            <p class="step-sub">Sleep, stress, and hydration significantly impact your results. Be honest — the plan adapts.</p>
+
+            <div class="lifestyle-grid">
+              <div class="lifestyle-card">
+                <div class="lifestyle-card-header">
+                  <span aria-hidden="true">😴</span>
+                  <label class="input-label" for="sleepSlider" style="margin:0">Sleep <span class="lifestyle-value" id="sleepVal">7h</span></label>
+                </div>
+                <input type="range" id="sleepSlider" class="range-slider" min="4" max="10" value="7" step="0.5" aria-label="Hours of sleep per night" aria-valuetext="7 hours" />
+                <div class="slider-labels"><span>4h</span><span>10h</span></div>
+              </div>
+
+              <div class="lifestyle-card">
+                <div class="lifestyle-card-header">
+                  <span aria-hidden="true">💧</span>
+                  <label class="input-label" for="waterSlider" style="margin:0">Current Daily Water <span class="lifestyle-value" id="waterVal">2.0 L</span></label>
+                </div>
+                <input type="range" id="waterSlider" class="range-slider" min="0.5" max="5" value="2" step="0.5" aria-label="Current daily water intake in liters" aria-valuetext="2 liters" />
+                <div class="slider-labels"><span>0.5L</span><span>5L</span></div>
+              </div>
+
+              <div class="lifestyle-card">
+                <div class="lifestyle-card-header">
+                  <span aria-hidden="true">🧠</span>
+                  <label class="input-label" id="stressLabel" style="margin:0">Stress Level</label>
+                </div>
+                <div class="option-grid option-grid-3 tight" role="radiogroup" aria-labelledby="stressLabel">
+                  <button class="option-card micro-card" data-field="stressLevel" data-value="low" role="radio" aria-checked="false">
+                    <div class="option-icon sm" aria-hidden="true">😌</div>
+                    <div class="option-label">Low</div>
+                  </button>
+                  <button class="option-card micro-card" data-field="stressLevel" data-value="medium" role="radio" aria-checked="false">
+                    <div class="option-icon sm" aria-hidden="true">😐</div>
+                    <div class="option-label">Medium</div>
+                  </button>
+                  <button class="option-card micro-card" data-field="stressLevel" data-value="high" role="radio" aria-checked="false">
+                    <div class="option-icon sm" aria-hidden="true">😫</div>
+                    <div class="option-label">High</div>
+                  </button>
+                </div>
+              </div>
+
+              <div class="lifestyle-card">
+                <div class="lifestyle-card-header">
+                  <span aria-hidden="true">💰</span>
+                  <label class="input-label" id="budgetLabel" style="margin:0">Food Budget</label>
+                </div>
+                <div class="option-grid option-grid-3 tight" role="radiogroup" aria-labelledby="budgetLabel">
+                  <button class="option-card micro-card" data-field="foodBudget" data-value="low" role="radio" aria-checked="false">
+                    <div class="option-icon sm" aria-hidden="true">💵</div>
+                    <div class="option-label">Budget</div>
+                  </button>
+                  <button class="option-card micro-card" data-field="foodBudget" data-value="medium" role="radio" aria-checked="false">
+                    <div class="option-icon sm" aria-hidden="true">💳</div>
+                    <div class="option-label">Moderate</div>
+                  </button>
+                  <button class="option-card micro-card" data-field="foodBudget" data-value="high" role="radio" aria-checked="false">
+                    <div class="option-icon sm" aria-hidden="true">💎</div>
+                    <div class="option-label">Premium</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-prev>← Back</button>
+              <button class="btn-generate" id="generateBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                Generate My Plan
+              </button>
+            </div>
+          </div>
+
+        </div><!-- end .steps-container -->
+      </div><!-- end .planner-wrapper -->
+    </div>
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section id="results" class="results-section section hidden" aria-label="Your personalized fitness plan">
+    <div class="container">
+      <!-- Summary Card (JS populated) -->
+      <div id="resultsSummaryCard"></div>
+
+      <div class="results-tabs" role="tablist" aria-label="Plan sections">
+        <button class="result-tab active" data-tab="summary" role="tab" aria-selected="true" aria-controls="summaryTabContent" id="tab-summary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          My Report
+        </button>
+        <button class="result-tab" data-tab="training" role="tab" aria-selected="false" aria-controls="trainingTabContent" id="tab-training">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="13" width="5" height="6" rx="1.5"/><rect x="17" y="13" width="5" height="6" rx="1.5"/><rect x="7" y="9" width="4" height="14" rx="1.5"/><rect x="13" y="9" width="4" height="14" rx="1.5"/></svg>
+          Training
+        </button>
+        <button class="result-tab" data-tab="nutrition" role="tab" aria-selected="false" aria-controls="nutritionTabContent" id="tab-nutrition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+          Nutrition
+        </button>
+        <button class="result-tab" data-tab="roadmap" role="tab" aria-selected="false" aria-controls="roadmapTabContent" id="tab-roadmap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          Roadmap
+        </button>
+      </div>
+
+      <div class="results-tab-content" id="summaryTabContent" role="tabpanel" aria-labelledby="tab-summary"></div>
+      <div class="results-tab-content hidden" id="trainingTabContent" role="tabpanel" aria-labelledby="tab-training"></div>
+      <div class="results-tab-content hidden" id="nutritionTabContent" role="tabpanel" aria-labelledby="tab-nutrition"></div>
+      <div class="results-tab-content hidden" id="roadmapTabContent" role="tabpanel" aria-labelledby="tab-roadmap"></div>
+
+      <div class="results-footer-actions">
+        <button class="btn-restart" id="restartBtn">↩ Start Over</button>
+        <button class="btn-primary btn-print" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Report
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXERCISE LIBRARY -->
+  <section id="exercises" class="exercises-section section" aria-label="Exercise Library">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Exercise Library</span>
+        <h2 class="section-title">Master Every <span class="gradient-text">Movement</span></h2>
+        <p class="section-sub">Browse our curated library with video demonstrations and expert coaching cues.</p>
+      </div>
+      <div class="filter-bar" id="exerciseFilters" role="group" aria-label="Filter exercises by muscle group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="chest">Chest</button>
+        <button class="filter-btn" data-filter="back">Back</button>
+        <button class="filter-btn" data-filter="legs">Legs</button>
+        <button class="filter-btn" data-filter="shoulders">Shoulders</button>
+        <button class="filter-btn" data-filter="arms">Arms</button>
+        <button class="filter-btn" data-filter="core">Core</button>
+        <button class="filter-btn" data-filter="cardio">Cardio</button>
+      </div>
+      <div class="exercise-grid" id="exerciseGrid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- NUTRITION LIBRARY -->
+  <section id="nutrition" class="nutrition-section section" aria-label="Nutrition Library">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Nutrition Library</span>
+        <h2 class="section-title">Fuel Your <span class="gradient-text">Performance</span></h2>
+        <p class="section-sub">Learn the macronutrient profiles of key foods to make smarter dietary choices every day.</p>
+      </div>
+      <div class="nutrition-filter-bar" role="group" aria-label="Filter foods by category">
+        <button class="filter-btn active" data-nfilter="all">All</button>
+        <button class="filter-btn" data-nfilter="protein">Protein</button>
+        <button class="filter-btn" data-nfilter="carbs">Carbs</button>
+        <button class="filter-btn" data-nfilter="fats">Fats</button>
+        <button class="filter-btn" data-nfilter="fruits">Fruits</button>
+        <button class="filter-btn" data-nfilter="veggies">Veggies</button>
+      </div>
+      <div class="nutrition-grid" id="nutritionGrid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- BMI CALCULATOR -->
+  <section id="bmi" class="bmi-section section" aria-label="BMI Calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Health Tool</span>
+        <h2 class="section-title">BMI <span class="gradient-text">Calculator</span></h2>
+        <p class="section-sub">Understand your body composition and where you stand on the health spectrum.</p>
+      </div>
+      <div class="bmi-layout">
+        <div class="bmi-inputs animate-on-scroll">
+          <div class="bmi-input-group">
+            <label for="bmiHeight">Height</label>
+            <div class="bmi-unit-row">
+              <input type="number" id="bmiHeight" class="bmi-input" placeholder="175" min="100" max="250" aria-label="Height for BMI calculation" />
+              <div class="unit-toggle small">
+                <button class="unit-btn active" id="bmiHeightCm" data-bmi-unit="cm">cm</button>
+                <button class="unit-btn" id="bmiHeightFt" data-bmi-unit="ft">ft</button>
+              </div>
+            </div>
+          </div>
+          <div class="bmi-input-group">
+            <label for="bmiWeight">Weight</label>
+            <div class="bmi-unit-row">
+              <input type="number" id="bmiWeight" class="bmi-input" placeholder="75" min="30" max="300" aria-label="Weight for BMI calculation" />
+              <div class="unit-toggle small">
+                <button class="unit-btn active" id="bmiWeightKg" data-bmi-unit="kg">kg</button>
+                <button class="unit-btn" id="bmiWeightLbs" data-bmi-unit="lbs">lbs</button>
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary bmi-calculate-btn" id="calcBmi">Calculate BMI</button>
+        </div>
+        <div class="bmi-result animate-on-scroll delay-1" id="bmiResult">
+          <div class="bmi-gauge-wrap">
+            <svg class="bmi-gauge" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M 20 110 A 90 90 0 0 1 180 110" fill="none" stroke="#E5E7EB" stroke-width="18" stroke-linecap="round"/>
+              <path id="bmiGaugeFill" d="M 20 110 A 90 90 0 0 1 180 110" fill="none" stroke="#10B981" stroke-width="18" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283" style="transition:stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1),stroke 0.5s ease"/>
+              <text x="100" y="85" text-anchor="middle" font-size="28" font-weight="700" fill="#111827" id="bmiGaugeNumber">--</text>
+              <text x="100" y="105" text-anchor="middle" font-size="10" fill="#6B7280">BMI Score</text>
+            </svg>
+          </div>
+          <div class="bmi-category" id="bmiCategory" aria-live="polite">Enter your details</div>
+          <div class="bmi-scale" aria-label="BMI scale reference">
+            <div class="bmi-scale-item" style="--clr:#3B82F6"><span>Underweight</span><span>&lt; 18.5</span></div>
+            <div class="bmi-scale-item" style="--clr:#10B981"><span>Normal</span><span>18.5–24.9</span></div>
+            <div class="bmi-scale-item" style="--clr:#F59E0B"><span>Overweight</span><span>25–29.9</span></div>
+            <div class="bmi-scale-item" style="--clr:#EF4444"><span>Obese</span><span>≥ 30</span></div>
+          </div>
+          <p class="bmi-note" id="bmiNote" aria-live="polite">Calculate your BMI to see health recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FITNESS TIPS -->
+  <section id="tips" class="tips-section section" aria-label="Fitness Tips">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Expert Advice</span>
+        <h2 class="section-title">Pro <span class="gradient-text">Fitness Tips</span></h2>
+        <p class="section-sub">Evidence-based principles to accelerate your results and keep you progressing long-term.</p>
+      </div>
+      <div class="tips-grid" id="tipsGrid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-section section" aria-label="Frequently Asked Questions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p class="section-sub">Everything you need to know about FitForge and your fitness journey.</p>
+      </div>
+      <div class="faq-grid" id="faqGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#hero" class="nav-logo footer-logo" aria-label="FitForge home">
+              <div class="nav-logo-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="2" y="13" width="5" height="6" rx="1.5" fill="currentColor"/><rect x="25" y="13" width="5" height="6" rx="1.5" fill="currentColor"/><rect x="7" y="9" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="21" y="9" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="11" y="14" width="10" height="4" rx="1.5" fill="currentColor"/></svg></div>
+              <span>FitForge</span>
+            </a>
+            <p class="footer-tagline">Your AI-powered fitness companion. Transform your body, forge your future.</p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+              <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <ul><li><a href="#planner">AI Planner</a></li><li><a href="#exercises">Exercise Library</a></li><li><a href="#nutrition">Nutrition Library</a></li><li><a href="#bmi">BMI Calculator</a></li></ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul><li><a href="#tips">Fitness Tips</a></li><li><a href="#faq">FAQ</a></li><li><a href="#features">Features</a></li><li><a href="#hero">About</a></li></ul>
+          </div>
+          <div class="footer-col">
+            <h4>Stay Updated</h4>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Weekly fitness tips directly in your inbox.</p>
+            <div class="footer-newsletter">
+              <label for="newsletterEmail" class="sr-only">Email address</label>
+              <input type="email" id="newsletterEmail" placeholder="your@email.com" class="newsletter-input" />
+              <button class="newsletter-btn" aria-label="Subscribe">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 FitForge AI Planner. Built for your transformation.</p>
+        <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EXERCISE MODAL -->
+  <div class="modal-overlay hidden" id="exerciseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose" aria-label="Close exercise modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-video-wrap">
+        <iframe id="modalVideo" class="modal-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Exercise tutorial video"></iframe>
+      </div>
+      <div class="modal-body">
+        <div class="modal-badges">
+          <span class="modal-badge" id="modalMuscle"></span>
+          <span class="modal-badge difficulty" id="modalDifficulty"></span>
+          <span class="modal-badge equipment-badge" id="modalEquipment"></span>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-sections">
+          <div class="modal-section">
+            <h4>Execution Steps</h4>
+            <ol class="modal-list" id="modalInstructions"></ol>
+          </div>
+          <div class="modal-section">
+            <h4>Coaching Tips</h4>
+            <ul class="modal-list tips-list" id="modalTips"></ul>
+          </div>
+        </div>
+        <div class="modal-mistakes-section">
+          <h4>⚠ Common Mistakes to Avoid</h4>
+          <ul class="modal-mistakes-list" id="modalMistakes"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADING OVERLAY -->
+  <div class="loading-overlay hidden" id="loadingOverlay" role="status" aria-live="assertive" aria-label="Generating your personalized plan">
+    <div class="loading-content">
+      <div class="loading-ring">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="40" r="32" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" stroke-dasharray="201" stroke-dashoffset="150" class="loading-ring-path"/>
+        </svg>
+        <div class="loading-logo" aria-hidden="true">FF</div>
+      </div>
+      <div class="loading-text" id="loadingText">Analysing your profile...</div>
+      <div class="loading-sub">Building your personalised plan</div>
+      <div class="loading-steps">
+        <div class="loading-step active" id="ls1">✓ Profile assessed</div>
+        <div class="loading-step" id="ls2">✓ Calories calculated</div>
+        <div class="loading-step" id="ls3">✓ Macros optimised</div>
+        <div class="loading-step" id="ls4">✓ Workout built</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
